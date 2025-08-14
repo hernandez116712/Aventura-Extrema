@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reserva | Aventura Extrema</title>
+  <style>
+    body {
+      background-color: #1B1B1B;
+      color: #FFF;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #FF5722;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(255, 87, 34, 0.8);
+      font-weight: 700;
+      font-size: 2.2em;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: 'Impact', Arial Black, sans-serif;
+    }
+    nav {
+      margin-top: 12px;
+    }
+    nav a {
+      color: #FFF;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.15em;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    nav a:hover {
+      background-color: #FFC107;
+      color: #1B1B1B;
+      box-shadow: 0 0 12px #FFC107;
+    }
+    form {
+      max-width: 650px;
+      margin: 50px auto 60px auto;
+      background-color: #2C2C2C;
+      padding: 35px 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #FF5722;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 700;
+      font-size: 1.1em;
+      color: #FFC107;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      background-color: #1B1B1B;
+      color: #FFC107;
+      box-shadow: inset 0 0 5px #FF5722;
+      transition: box-shadow 0.3s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 8px 2px #FFC107;
+      background-color: #2C2C2C;
+    }
+    button {
+      background-color: #FFC107;
+      color: #1B1B1B;
+      padding: 14px 30px;
+      border: none;
+      margin-top: 30px;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 1.25em;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #FFC107;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    button:hover {
+      background-color: #FF5722;
+      color: #FFF;
+      box-shadow: 0 0 25px #FF5722;
+    }
+    .preview {
+      margin-top: 15px;
+      text-align: center;
+    }
+    .preview img {
+      max-width: 160px;
+      border-radius: 12px;
+      border: 3px solid #FFC107;
+      box-shadow: 0 0 15px #FF5722;
+      transition: transform 0.3s ease;
+    }
+    .preview img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #FFC107;
+      text-align: center;
+      color: #1B1B1B;
+      padding: 15px 20px;
+      font-weight: 700;
+      font-size: 1.1em;
+      letter-spacing: 1.2px;
+      box-shadow: 0 -4px 15px rgba(255, 193, 7, 0.8);
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+    }
+    @media (max-width: 700px) {
+      form {
+        margin: 20px 15px 60px 15px;
+        padding: 25px 20px;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 1em;
+        padding: 6px 10px;
+      }
+      header {
+        font-size: 1.8em;
+        padding: 18px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aventura Extrema</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="aventuras.html">Tours</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="reserva.html">Reserva</a>
+    </nav>
+  </header>
+
+  <form>
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" name="nombre" required />
+
+    <label for="telefono">Número de teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" placeholder="+52 55 1234 5678" required />
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="actividad">Actividad:</label>
+    <select id="actividad" name="actividad" required>
+      <option value="">--Selecciona una--</option>
+      <option value="paracaidismo">Paracaidismo</option>
+      <option value="rafting">Rafting</option>
+      <option value="escalada">Escalada</option>
+    </select>
+
+    <label for="fecha">Fecha deseada:</label>
+    <input type="date" id="fecha" name="fecha" required />
+
+    <label for="foto">Subir foto para tu tarjeta:</label>
+    <input type="file" id="foto" name="foto" accept="image/*" onchange="mostrarPreview(event)" />
+    <div class="preview">
+      <img id="imgPreview" src="" alt="Vista previa" style="display:none" />
+    </div>
+
+    <label for="mensaje">Comentarios adicionales:</label>
+    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+    <button type="submit">Enviar reserva</button>
+  </form>
+
+  <footer>
+    © 2025 Aventura Extrema - Todos los derechos reservados
+  </footer>
+
+  <script>
+    function mostrarPreview(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const imgPreview = document.getElementById("imgPreview");
+          imgPreview.src = e.target.result;
+          imgPreview.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+</body>
+</html>
