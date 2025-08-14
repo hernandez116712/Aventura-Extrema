@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aventura Extrema - Sitio Completo</title>
+  <style>
+    body {
+      background-color: #1B1B1B;
+      color: #FFF;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #FF5722;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(255, 87, 34, 0.7);
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 2.2em;
+      text-transform: uppercase;
+      font-family: 'Impact', Arial Black, sans-serif;
+      user-select: none;
+    }
+    nav {
+      margin-top: 12px;
+    }
+    nav a {
+      color: #FFF;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.15em;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      cursor: pointer;
+      display: inline-block;
+    }
+    nav a:hover, nav a.active {
+      background-color: #FFC107;
+      color: #000;
+      box-shadow: 0 0 12px #FFC107;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto 60px auto;
+      padding: 20px 25px;
+      background: rgba(44, 44, 44, 0.85);
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(255, 87, 34, 0.5);
+      font-size: 1.15em;
+      text-align: left;
+      min-height: 400px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #FFC107;
+      font-family: 'Segoe UI Black', Arial Black, sans-serif;
+      letter-spacing: 1.5px;
+      font-size: 2em;
+      text-shadow: 1px 1px 5px #FF5722;
+    }
+    .actividad {
+      margin-bottom: 30px;
+      border-left: 6px solid #FF5722;
+      padding-left: 15px;
+    }
+    .actividad h3 {
+      color: #FF5722;
+      margin-bottom: 8px;
+      font-family: 'Segoe UI Semibold', Arial, sans-serif;
+      text-transform: uppercase;
+    }
+    .actividad img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 10px;
+      box-shadow: 0 4px 15px rgba(255, 87, 34, 0.6);
+    }
+    footer {
+      background-color: #FFC107;
+      text-align: center;
+      color: #000;
+      padding: 15px 20px;
+      font-weight: 700;
+      font-size: 1.1em;
+      letter-spacing: 1.2px;
+      box-shadow: 0 -4px 15px rgba(255, 193, 7, 0.7);
+      margin-top: 40px;
+      user-select: none;
+    }
+    /* Ocultar secciones */
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    /* Estilos formulario reserva */
+    form label {
+      display: block;
+      margin-top: 15px;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    form button {
+      background-color: #FFC107;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 1.1em;
+      transition: background-color 0.3s;
+    }
+    form button:hover {
+      background-color: #FFB300;
+    }
+    .preview {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .preview img {
+      max-width: 150px;
+      border-radius: 10px;
+      border: 2px solid #FFC107;
+    }
+    /* Nosotros styles */
+    .contenido h2, .contenido h3 {
+      color: #FFC107;
+      margin-top: 20px;
+    }
+    .contenido .destacado {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-left: 5px solid #FFC107;
+      margin: 20px 0;
+      font-style: italic;
+    }
+    .contenido .contacto {
+      background-color: #FF5722;
+      padding: 15px;
+      margin-top: 30px;
+      border-radius: 8px;
+      color: #FFF;
+    }
+    .contenido ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aventura Extrema</h1>
+    <nav>
+      <a href="#" data-target="inicio" class="active">Inicio</a>
+      <a href="#" data-target="tours">Tours</a>
+      <a href="#" data-target="nosotros">Nosotros</a>
+      <a href="#" data-target="reserva">Reserva</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section id="inicio" class="active">
+      <h2>¡Vive la adrenalina al máximo!</h2>
+      <div class="actividad">
+        <h3>Paracaidismo</h3>
+        <p>Siente la libertad del cielo con un salto desde más de 3,000 metros de altura. Vive una caída libre de más de 40 segundos y contempla paisajes impresionantes. Ideal para quienes buscan romper sus miedos y vivir una de las experiencias más intensas de su vida.</p>
+        <img src="https://tse3.mm.bing.net/th/id/OIP.18bpwz-ASSG3r35kri9pGwHaEK?cb=thfvnext&w=1920&h=1080&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Paracaidismo" />
+      </div>
+      <div class="actividad">
+        <h3>Rafting</h3>
+        <p>Navega por ríos de aguas bravas en un recorrido lleno de emoción y trabajo en equipo. Apto para todos los niveles, con equipo especializado y guías profesionales que garantizan tu seguridad mientras te diviertes como nunca.</p>
+        <img src="https://tse3.mm.bing.net/th/id/OIP.Teb1l_qlVclJMrCanUBpXQHaEH?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Rafting" />
+      </div>
+      <div class="actividad">
+        <h3>Escalada</h3>
+        <p>Escala paredes naturales y artificiales con rutas adaptadas a todos los niveles. Mejora tu fuerza, concentración y resistencia mientras disfrutas de vistas espectaculares desde lo más alto.</p>
+        <img src="https://tse4.mm.bing.net/th/id/OIP.XeGnx3XIDaz11rbiSFwy-QAAAA?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Escalada" />
+      </div>
+    </section>
+
+    <!-- TOURS (CATÁLOGO) -->
+    <section id="tours">
+      <h2>Catálogo de Tours</h2>
+      <p>Aquí puedes agregar el catálogo completo de tours disponibles con imágenes, descripción y precios si quieres.</p>
+      <!-- Ejemplo básico -->
+      <div class="actividad">
+        <h3>Tour de Montaña Extrema</h3>
+        <p>Explora los mejores picos y disfruta de una aventura inolvidable con nuestros expertos guías.</p>
+        <img src="https://tse1.mm.bing.net/th/id/OIP.37unXCu3SYzvCGxVROUPXwHaE7?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tour Montaña" />
+      </div>
+      <div class="actividad">
+        <h3>Ruta de Ríos Salvajes</h3>
+        <p>Descenso en rafting por ríos de aguas bravas, diversión asegurada para todo el equipo.</p>
+        <img src="https://tse2.mm.bing.net/th/id/OIP.7amKSKnqSc70xFo0grr0gAHaEm?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Rafting Tour" />
+      </div>
+      <div class="actividad">
+        <h3>Escalada y Senderismo</h3>
+        <p>Rutas variadas para principiantes y expertos con vistas espectaculares.</p>
+        <img src="https://tse1.mm.bing.net/th/id/OIP.bDyVDN-BNhQG1Xyi9E29MAHaHa?cb=thfvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Escalada y Senderismo" />
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros">
+      <h2>Sobre Nosotros</h2>
+      <div class="contenido">
+        <p>Aventura Extrema nació en 2010 con la misión de conectar a las personas con su lado más audaz y aventurero. Desde entonces, hemos guiado a miles de valientes en experiencias inolvidables: desde lanzarse en paracaídas, descender en rappel por acantilados de más de 50 metros, hasta cruzar ríos con corrientes desafiantes.</p>
+        <p>Nuestro equipo está formado por expertos en deportes extremos certificados internacionalmente y apasionados por la adrenalina. Más que un servicio, ofrecemos vivencias que transforman tu forma de ver la vida.</p>
+        <div class="destacado">
+          <strong>"Creemos que la vida empieza al borde de tu zona de confort. Si buscas emociones reales y experiencias que te marquen, estás en el lugar correcto."</strong>
+        </div>
+        <h3>Misión</h3>
+        <p>Proporcionar experiencias de aventura seguras y emocionantes que inspiren a las personas a desafiar sus límites, descubrir nuevas habilidades y conectar con la naturaleza.</p>
+        <h3>Visión</h3>
+        <p>Ser la agencia de deportes extremos más reconocida en América Latina, conocida por su innovación, seguridad y compromiso con el medio ambiente.</p>
+        <h3>Valores</h3>
+        <ul>
+          <li>Seguridad ante todo.</li>
+          <li>Respeto por la naturaleza.</li>
+          <li>Pasión por la aventura.</li>
+          <li>Trabajo en equipo.</li>
+          <li>Innovación constante.</li>
+        </ul>
+        <h3>¿Por qué elegirnos?</h3>
+        <p>En Aventura Extrema, cada actividad está cuidadosamente diseñada para ofrecer el equilibrio perfecto entre emoción y seguridad. Usamos equipo de última generación, seguimos protocolos internacionales y trabajamos con guías altamente capacitados. Además, organizamos experiencias personalizadas para grupos, empresas y eventos especiales.</p>
+        <div class="contacto">
+          <h3>Datos de Contacto</h3>
+          <p>📍 Dirección: Av. Libertad 123, Ciudad de México, México</p>
+          <p>📞 Teléfono: +52 55 1234 5678</p>
+          <p>📧 Email: contacto@aventuraextrema.com</p>
+          <p>🌐 Sitio web: www.aventuraextrema.com</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVA -->
+    <section id="reserva">
+      <h2>Reserva tu Aventura</h2>
+      <form>
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="telefono">Número de teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Ej: +52 55 1234 5678" required />
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="actividad">Actividad:</label>
+        <select id="actividad" name="actividad" required>
+          <option value="">--Selecciona una--</option>
+          <option value="paracaidismo">Paracaidismo</option>
+          <option value="rafting">Rafting</option>
+          <option value="escalada">Escalada</option>
+        </select>
+
+        <label for="fecha">Fecha deseada:</label>
+        <input type="date" id="fecha" name="fecha" required />
+
+        <label for="foto">Subir foto para tu tarjeta:</label>
+        <input type="file" id="foto" name="foto" accept="image/*" onchange="mostrarPreview(event)" />
+        <div class="preview">
+          <img id="imgPreview" src="" alt="Vista previa" style="display:none;" />
+        </div>
+
+        <label for="mensaje">Comentarios adicionales:</label>
+        <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+        <button type="submit">Enviar reserva</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Aventura Extrema - Todos los derechos reservados
+  </footer>
+
+  <script>
+    // Manejo de navegación sin recarga
+    const links = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('main section');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        // Remover active de todos los links y secciones
+        links.forEach(l => l.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+
+        // Agregar active al link clickeado
+        link.classList.add('active');
+
+        // Mostrar sección correspondiente
+        const target = link.getAttribute('data-target');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+    // Función para mostrar preview de imagen
+    function mostrarPreview(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const imgPreview = document.getElementById("imgPreview");
+          imgPreview.src = e.target.result;
+          imgPreview.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+</body>
+</html>  
